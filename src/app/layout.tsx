@@ -36,12 +36,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <CopilotWrapper>
+        {/* <CopilotWrapper> */}
           <QueryProvider>
             <Header />
             {children}
           </QueryProvider>
-        </CopilotWrapper>
+        {/* </CopilotWrapper> */}
       </body>
     </html>
   );
