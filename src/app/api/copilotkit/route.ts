@@ -1,34 +1,35 @@
-import {
-  CopilotRuntime,
-  OpenAIAdapter,
-  copilotRuntimeNextJSAppRouterEndpoint,
-} from "@copilotkit/runtime";
-import OpenAI from "openai";
-import { NextRequest } from "next/server";
+// import {
+//   CopilotRuntime,
+//   OpenAIAdapter,
+//   copilotRuntimeNextJSAppRouterEndpoint,
+// } from "@copilotkit/runtime";
+// import OpenAI from "openai";
+// import { NextRequest } from "next/server";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-const serviceAdapter = new OpenAIAdapter({
-  openai,
-  model: "gpt-4.1-mini",
-} as any);
-const runtime = new CopilotRuntime({
-  remoteEndpoints: [
-    {
-      url:
-        process.env.NEXT_PUBLIC_COPILOT_ENDOINT ||
-        "http://localhost:8000/copilotkit",
-    },
-  ],
-});
+// const openai = new OpenAI({
+//   apiKey: process.env.OPENAI_API_KEY,
+// });
+// const serviceAdapter = new OpenAIAdapter({
+//   openai,
+//   model: "gpt-4.1-mini",
+// } as any);
+// const runtime = new CopilotRuntime({
+//   remoteEndpoints: [
+//     {
+//       url:
+//         process.env.NEXT_PUBLIC_COPILOT_ENDOINT ||
+//         "http://localhost:8000/copilotkit",
+//     },
+//   ],
+// });
 
-export const POST = async (req: NextRequest) => {
-  const { handleRequest } = copilotRuntimeNextJSAppRouterEndpoint({
-    runtime,
-    serviceAdapter,
-    endpoint: process.env.NEXT_PUBLIC_COPILOT_RUNTIME_URL || "/api/copilotkit",
-  });
+// export const POST = async (req: NextRequest) => {
+//   const { handleRequest } = copilotRuntimeNextJSAppRouterEndpoint({
+//     runtime,
+//     serviceAdapter,
+//     endpoint: process.env.NEXT_PUBLIC_COPILOT_RUNTIME_URL || "/api/copilotkit",
+//   });
 
-  return handleRequest(req);
-};
+//   return handleRequest(req);
+// };
+export {};
