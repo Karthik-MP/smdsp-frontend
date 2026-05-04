@@ -128,9 +128,9 @@ export default function ComparisonPage() {
     WINDOW_OPTIONS.find((opt) => opt.value === windowSize)?.label || "7 days";
 
   return (
-    <div className="container mx-auto px-10 py-5">
-      <div className="grid grid-cols-4 md:grid-cols-4 gap-4">
-        <div className="col-span-4">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-10 py-5">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
+        <div className="lg:col-span-4">
           {isLoading ? (
             <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white px-5 pt-5 sm:px-6 sm:pt-6 flex items-center justify-center min-h-[300px]">
               <SyncLoader loading={true} color="#465fff" size={26} />
@@ -158,7 +158,7 @@ export default function ComparisonPage() {
         </div>
 
         {/* Event Related Timeline Chart */}
-        <div className="col-span-3 mt-4">
+        <div className="lg:col-span-3 mt-4">
           {eventLoading ? (
             <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white px-5 pt-5 flex items-center justify-center min-h-[400px]">
               <PropagateLoader loading={true} color="#465fff" />

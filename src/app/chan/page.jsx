@@ -131,10 +131,10 @@ export default function Page() {
   // ---------------- RENDER UI ----------------
 
   return (
-    <div className="container mx-auto px-10 py-5">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-10 py-5">
       {/* ---------- SUMMARY CARDS ---------- */}
       {loadingSummary ? (
-        <div className="grid grid-cols-3 gap-4 mb-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
           {Array.from({ length: statsConfig.length }).map((_, i) => (
             <div
               key={i}
@@ -150,9 +150,9 @@ export default function Page() {
       )}
 
       {/* ---------- MAIN GRID ---------- */}
-      <div className="grid grid-cols-4 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
         {/* ---------- DAILY POSTS ---------- */}
-        <div className="col-span-3">
+        <div className="lg:col-span-3">
           <div className="col-span-2 my-1">
             {loadingDaily ? (
               <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white px-5 pt-5 flex items-center justify-center min-h-[300px]">
@@ -204,7 +204,7 @@ export default function Page() {
         </div>
 
         {/* ---------- COUNTRY STATS ---------- */}
-        <div className="col-span-1 my-1">
+        <div className="lg:col-span-1 my-1">
           {loadingCountry ? (
             <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white px-5 pt-5 flex items-center justify-center min-h-[400px]">
               <SyncLoader color="#465fff" />

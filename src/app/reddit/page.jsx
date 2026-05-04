@@ -58,10 +58,10 @@ export default function Page() {
   ];
 
   return (
-    <div className="container mx-auto px-10 py-5">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-10 py-5">
       {/* Summary Cards */}
       {summaryLoading ? (
-        <div className="grid grid-cols-3 gap-4 mb-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
           {Array.from({ length: statsConfig.length }).map((_, i) => (
             <div
               key={i}
@@ -86,8 +86,8 @@ export default function Page() {
       )}
 
       {/* Top Subscribers Chart */}
-      <div className="grid grid-cols-4 sm:grid-cols-1 lg:grid-cols-4 gap-4 min-h-[250px] pt-5">
-        <div className="col-span-2">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 min-h-[250px] pt-5">
+        <div className="lg:col-span-2">
           {!topSubLoading && topSubscribers?.length > 0 ? (
             <HorizontalBarChart
               title="Top Subscribers by Subreddits"
